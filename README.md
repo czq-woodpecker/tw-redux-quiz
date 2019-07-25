@@ -18,7 +18,7 @@
         - 按奇偶数显示不同色块
         - 所有Icon来源[Material Design Icons](https://react-icons.netlify.com/#/icons/md)
 2. 笔记详情页
-    - 详情页路由"/notes/1"
+    - 详情页路由"/notes/:id"
     - 左边栏显示笔记标题列表
     - 点击左边栏笔记标题跳转到对应笔记详情页
     - 右边栏显示笔记标题和正文
