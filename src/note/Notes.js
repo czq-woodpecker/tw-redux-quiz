@@ -17,17 +17,19 @@ class Notes extends Component {
         <ul>
           {this.props.notes.map((note, index) => (
             <li key={index}>
-              <NavLink to={{
-                pathname: `/notes/${note.id}`,
-                state: {
-                  note: note
-                }
-              }} className="menu-link" activeClassName="active">
-                {note.title}
-              </NavLink>
+              <div class="noteTitleBox">
+                <NavLink to={{
+                  pathname: `/notes/${note.id}`,
+                  state: {
+                    note: note
+                  }
+                }} className="menu-link" activeClassName="active">
+                  {note.title}
+                </NavLink>
+              </div>
             </li>
           ))}
-          <li id="addNote">
+          <li>
             <NavLink to={'/notes/create'} className="menu-link" activeClassName="active">
               <MdNoteAdd></MdNoteAdd>
             </NavLink>
