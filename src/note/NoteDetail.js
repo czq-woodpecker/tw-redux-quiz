@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {getNotesAction} from "../actions/noteAction";
 import {NavLink} from "react-router-dom";
 import Header from "../common/Header";
+import {deleteNoteById} from "../api/note";
 
 class NoteDetail extends Component {
 
@@ -56,18 +57,18 @@ class NoteDetail extends Component {
 
   deleteNoteById() {
     const id = this.props.location.state.note.id;
-    fetch('http://localhost:8080/api/posts/' + id, {
-      method: 'DELETE'})
+    deleteNoteById(id)
       .then(response => {
         if(response.status == 200) {
           alert('删除成功');
           this.backToHome();
-        } else {
+        } else{
           alert('删除失败');
         }
-      }).catch(reject => {
+      })
+      .catch(error => {
         alert("连接失败");
-    })
+      })
   }
 
   backToHome() {
