@@ -1,0 +1,64 @@
+#noteDetail {
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  min-height: 760px;
+
+  .noteList {
+    display: inline-block;
+    background: #F1F2F6;
+    width: 26%;
+
+    ul {
+      padding: 32px 20px;
+
+      li {
+        list-style: none;
+
+        .noteTitle {
+          display: block;
+          padding: 16px 8px;
+          line-height: 20px;
+          cursor: pointer;
+
+        }
+
+        .menu-link {
+          text-decoration: none;
+          color: black;
+        }
+
+        .menu-active {
+          text-decoration: none;
+          background: #DCE1E7;
+        }
+      }
+
+      .noteTitle:hover {
+        background: #AAB7F0;
+      }
+    }
+
+
+  }
+}
+
+.noteDetail {
+  flex: 1;
+  padding: 20px 120px 20px 20px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  hr {
+    margin-bottom: 16px;
+  }
+
+  #noteContent {
+    padding: 1em;
+
+    line-height: 1.6em;
+  }
+}
