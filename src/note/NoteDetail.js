@@ -47,7 +47,7 @@ class NoteDetail extends Component {
           <div id="noteContent">{note.description}</div>
           <hr/>
           <div  className={'noteOperation'}>
-            <button className={'deleteBtn'} onClick={this.deleteNoteById}>删除</button>
+            <button className={'operateBtn'} onClick={this.deleteNoteById}>删除</button>
             <button className={'backBtn'} onClick={this.backToHome}>返回</button>
           </div>
         </section>

@@ -14,3 +14,17 @@ export function deleteData(url) {
   })
 }
 
+export function postData(url, data) {
+  return new Promise((resolve, reject) => {
+    fetch(url, {
+      body: JSON.stringify(data),
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then(response => resolve(response))
+      .catch(error => reject(error))
+  })
+}
+

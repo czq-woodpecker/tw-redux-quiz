@@ -4,6 +4,7 @@ import {NavLink, Route} from "react-router-dom";
 import {getNotesAction} from "../actions/noteAction";
 import {connect} from "react-redux";
 import NoteDetail from "./NoteDetail";
+import { MdNoteAdd } from "react-icons/md";
 
 class Notes extends Component {
   componentDidMount() {
@@ -26,6 +27,11 @@ class Notes extends Component {
               </NavLink>
             </li>
           ))}
+          <li id="addNote">
+            <NavLink to={'/notes/create'} className="menu-link" activeClassName="active">
+              <MdNoteAdd></MdNoteAdd>
+            </NavLink>
+          </li>
         </ul>
       </main>
     );
