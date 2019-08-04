@@ -6,6 +6,13 @@ import {NavLink} from "react-router-dom";
 import Header from "../common/Header";
 
 class NoteDetail extends Component {
+
+  constructor(props, context) {
+    super(props, context);
+    this.deleteNoteById = this.deleteNoteById.bind(this);
+    this.backToHome = this.backToHome.bind(this);
+  }
+
   componentDidMount() {
     this.props.getNotes();
   }
@@ -15,14 +22,13 @@ class NoteDetail extends Component {
     const currentNoteId = note.id;
     const notes = this.props.notes;
     return (
-      <main id={'noteDetail'}>
+      <main id={'noteDetailBox'}>
         <section className="noteList">
           <ul>
             {notes.map((note, index) => {
               let activeClass = currentNoteId === note.id ? "menu-active" : "";
               return(
                 <li key={index}>
-                  {/*<a className={'noteTitle menu-active'}>{note.title}</a>*/}
                   <NavLink to={{
                     pathname: `/notes/${note.id}`,
                     state: {
@@ -32,16 +38,40 @@ class NoteDetail extends Component {
                 </li>
               );
             })}
-
           </ul>
         </section>
         <section className="noteDetail">
           <h1>{note.title}</h1>
           <hr/>
           <div id="noteContent">{note.description}</div>
+          <hr/>
+          <div  className={'noteOperation'}>
+            <button className={'deleteBtn'} onClick={this.deleteNoteById}>删除</button>
+            <button className={'backBtn'} onClick={this.backToHome}>返回</button>
+          </div>
         </section>
       </main>
     );
+  }
+
+  deleteNoteById() {
+    const id = this.props.location.state.note.id;
+    fetch('http://localhost:8080/api/posts/' + id, {
+      method: 'DELETE'})
+      .then(response => {
+        if(response.status == 200) {
+          alert('删除成功');
+          this.backToHome();
+        } else {
+          alert('删除失败');
+        }
+      }).catch(reject => {
+        alert("连接失败");
+    })
+  }
+
+  backToHome() {
+    this.props.history.push('/');
   }
 }
 

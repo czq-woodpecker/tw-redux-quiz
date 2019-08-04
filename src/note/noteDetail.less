@@ -1,4 +1,4 @@
-#noteDetail {
+#noteDetailBox {
   width: 80%;
   margin-left: 10%;
   display: flex;
@@ -38,27 +38,45 @@
         background: #AAB7F0;
       }
     }
-
-
   }
+
+  .noteDetail {
+    flex: 1;
+    padding: 20px 120px 20px 20px;
+
+    h1 {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    hr {
+      margin-bottom: 16px;
+    }
+
+    #noteContent {
+      padding: 1em;
+      line-height: 1.6em;
+    }
+
+    .noteOperation {
+      text-align: center;
+
+      .deleteBtn {
+        background: #FD6D83;
+        padding: 1em;
+        width: 120px;
+        margin-right: 20px;
+      }
+
+      .backBtn {
+        background: #F1F2F6;
+        padding: 1em;
+        width: 120px;
+
+      }
+    }
+  }
+
 }
 
-.noteDetail {
-  flex: 1;
-  padding: 20px 120px 20px 20px;
 
-  h1 {
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  hr {
-    margin-bottom: 16px;
-  }
-
-  #noteContent {
-    padding: 1em;
-
-    line-height: 1.6em;
-  }
-}
