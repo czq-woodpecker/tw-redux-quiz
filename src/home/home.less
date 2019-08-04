@@ -1,0 +1,46 @@
+#homeBox {
+  header {
+    background: #AAB7F0;
+    padding: 1em;
+    text-align: center;
+
+    h3 {
+      color: white;
+      font-family: Arial;
+    }
+  }
+
+  main {
+    width: 70%;
+    margin-left: 15%;
+    height: 600px;
+
+    ul {
+      li:nth-child(2n+1) {
+        background-color: #F1A686;
+      }
+
+      li:nth-child(2n) {
+        background: #F6D698;
+      }
+
+      li {
+        display: inline-block;
+        text-align: center;
+        color: white;
+        margin-left: 4%;
+        margin-top: 4%;
+        height: 260px;
+        width: 20%;
+
+        .menu-link {
+          text-decoration: none;
+          color: white;
+          .active {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
